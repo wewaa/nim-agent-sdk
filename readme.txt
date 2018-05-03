@@ -1,0 +1,1 @@
+This is the Java SDK of developed for Joinme service . Ltd.Antek All rights reserved
