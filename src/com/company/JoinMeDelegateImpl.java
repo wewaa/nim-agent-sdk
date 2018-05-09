@@ -8,6 +8,6 @@ public class JoinMeDelegateImpl implements JoinmeAgentDelegate {
     @Override
     public void OnRecieveMsg(String Msg) {
         System.out.println("callback "+Msg);
-        Main.jai.sendChatCmd(Msg);
+        Main.agentInterfaceImpl.sendChatCmd(Msg);
     }
 }
