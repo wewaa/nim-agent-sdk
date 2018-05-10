@@ -147,6 +147,13 @@ Response:
 
   * */
   def refreshToken(refreshTokenStr:String)
+ 7. /* RuleApi action执行完成的回复接口
+   {
+     actId:"",
+     status:""
+   }
+    */
+   def sendRuleCmd(ruleCmdStr:String)
 
 
 四、SDK提供以下回调函数：
@@ -184,6 +191,7 @@ Response:
 
   apiName包含:
   sendChatCmd
+  sendRuleCmd
   setMenu
   setQuickCmd
   getAccessToken
