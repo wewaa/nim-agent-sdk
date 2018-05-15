@@ -108,7 +108,7 @@ jar包位于工程目录lib下
   }
   */
   def setQuickCmd(quickcmdString:String)
-5./* get access token
+5./* get oauth token Basic Auth
   Request:
  {
    "domain_id": "c21f969b-5f03-433d-95e0-4f8f136e7682",
@@ -126,7 +126,7 @@ jar包位于工程目录lib下
     "refresh_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MTA2NDc2MTksImRtSWQiOiJjMjFmOTY5Yi01ZjAzLTQzM2QtOTVlMC00ZjhmMTM2ZTc2ODIiLCJhcHBJZCI6IjE0YmQ4YThkLWQwMmQtNDk3YS05ZGY3LTczNDQ3OWM4Y2YxMiIsImF1dGhJZCI6IjhPajN4QnhvZmlwc1ZQcFlhSHJ2SDVpUUVIbGR3NlNTZ3pqWjdLMjVCZENyaGdoQWlRTW1GYUp6d3ppdUNRWEMifQ.9TDwPnZFoHbs2ReaCT6Wtwk8o4-ckb9P61zPl6I4nkA"
  }
   */
-  def getAccessToken(getTokenStr:String)
+  def getOauthToken(getTokenStr:String)
 
 6./* refresh token  Basic Auth
   Request:
@@ -147,6 +147,24 @@ Response:
 
   * */
   def refreshToken(refreshTokenStr:String)
+ 7. /* RuleApi action执行完成的回复接口
+   {
+     actId:"",
+     status:""
+   }
+    */
+   def sendRuleCmd(ruleCmdStr:String)
+ 8.  /*
+      Agent获取用户的profile信息
+      Response body example
+    {
+        "name": "Joinme Test",
+        "pid": "Uxxxxxxxxxxxxxx...",
+        "avatar": "https://abc.com/...",
+        "locale": "zh_TW"
+    }
+      * */
+      def getProfile(oauthToken:String)
 
 
 四、SDK提供以下回调函数：
@@ -184,10 +202,12 @@ Response:
 
   apiName包含:
   sendChatCmd
+  sendRuleCmd
   setMenu
   setQuickCmd
-  getAccessToken
+  getOauthToken
   refreshToken
+  getProfile
 
   respCode:
   0:表示成功
