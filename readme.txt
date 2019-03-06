@@ -1,4 +1,4 @@
-
+﻿
 此工程是一个Java程序调用第三方Agent SDK jar包的demo程序
 
 jar包位于工程目录lib下
@@ -17,7 +17,17 @@ jar包位于工程目录lib下
 
 三、SDK提供以下接口：
 1.SDK使用的初始化接口
- def init(appName:String,appId: String, appKey : String, domainId : String, agentId : String, accessToken : String) : Boolean
+ /*
+    agentName: agent的名字
+    appId：developer web上申请的application得到的appid
+    appKey：developer web上申请的application得到的appKey
+    domainId：一般会在developer web上显示为默认值
+    agentId：创建agent后得到agentId
+    accessToken:创建agent后得到的accessToken
+    restPort：第三方开发者开发的java程序即将部署的服务器所占用的端口号
+ */
+ def init(agentName:String,appId: String, appKey : String, domainId : String, agentId : String, accessToken : String,restPort:Int) : Boolean
+ appName:
 2.回复ChatApi发来的消息
   /*
   Request sample:
@@ -218,3 +228,6 @@ Response:
   * */
   def onReceiveHttpResponse(apiName:String,respCode:Int,respJson:String)
 
+五、Agent sdk接收消息路由
+   Agent sdk接收消息的地址示例：http://serverIP:restPort/middlebot/3rd/v1/chatevent
+   Header要求带上X-JoinMe-Signature，值为SDKServer.hmac256(SDKServer.appKey,req.toJson.toString())

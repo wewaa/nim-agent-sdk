@@ -10,5 +10,23 @@
     <orderEntry type="library" name="jagentsdk" level="project" />
     <orderEntry type="library" name="JAgentSDK-1.0_2018-04-21_0656" level="project" />
     <orderEntry type="library" name="JAgentSDK-1.0_2018-06-12_0953" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/JAgentSDK-1.0_2019-03-05_1052.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/JAgentSDK-1.0_2019-03-06_0645.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
