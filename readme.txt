@@ -4,9 +4,9 @@
 jar包位于工程目录lib下
 
 一、jar包的简单使用流程如Main函数中所示：
-1.需要引入包 import com.gemteks.nim.sdkinterface.JoinmeAgentInterfaceImpl;
-2.创建对象JoinMeDelegateImpl的实例，此对象实例需要传入SDK接口实现层，以便SDK接口实现层回调给Java层；
-3.创建对象JoinmeAgentInterfaceImpl的实例，用此对象实例来调用SDK层接口；
+1.需要引入包 import com.gemteks.nim.sdkinterface.FreePPAgentInterfaceImpl;
+2.创建对象FreePPDelegateImpl的实例，此对象实例需要传入SDK接口实现层，以便SDK接口实现层回调给Java层；
+3.创建对象FreePPAgentInterfaceImpl的实例，用此对象实例来调用SDK层接口；
 
 二、SDK相关接口调用说明：
 1.在调用SDK相关接口之前，需要先创建好Application,Agent,以拿到init接口所需要的相关信息；
@@ -168,7 +168,7 @@ Response:
       Agent获取用户的profile信息
       Response body example
     {
-        "name": "Joinme Test",
+        "name": "FreePP Test",
         "pid": "Uxxxxxxxxxxxxxx...",
         "avatar": "https://abc.com/...",
         "locale": "zh_TW"
@@ -190,8 +190,8 @@ Response:
     	message: 'hello world' // user message
     },
     user: {
-    	jmGid: '', // joinme group id
-    	jmPid: '', // joinme profile id
+    	jmGid: '', // freepp group id
+    	jmPid: '', // freepp profile id
     },
     actId: ''
   }
@@ -230,4 +230,4 @@ Response:
 
 五、Agent sdk接收消息路由
    Agent sdk接收消息的地址示例：http://serverIP:restPort/middlebot/3rd/v1/chatevent
-   Header要求带上X-JoinMe-Signature，值为SDKServer.hmac256(SDKServer.appKey,req.toJson.toString())
+   Header要求带上X-FreePP-Signature，值为SDKServer.hmac256(SDKServer.appKey,req.toJson.toString())
